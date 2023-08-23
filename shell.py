@@ -1,12 +1,23 @@
 from my_lexer import Lexer
 from my_parser import Parser
+from my_interpreter import Interpreter
 
 while True:
+    #taking input 
     text = input("ProLang> ")
-    tokenizer = Lexer(text)
-    my_tokens = tokenizer.tokenize()
-    
-    parser = Parser(my_tokens)
-    parse_tree = parser.parse()
+    if text == "exit":
+        exit()
+    else:
+        #tokenizing the input
+        tokenizer = Lexer(text)
+        my_tokens = tokenizer.tokenize()
+        
+        #parsing the tokens
+        parser = Parser(my_tokens)
+        parse_tree = parser.parse()
 
-    print(parse_tree)
+        #interpreting the parse tree
+        interpreter = Interpreter(parse_tree)
+        result = interpreter.interpret()
+
+        print(result)
