@@ -10,10 +10,10 @@ while True:
     else:
         #tokenizing the input
         tokenizer = Lexer(text)
-        my_tokens = tokenizer.tokenize()
+        tokens = tokenizer.tokenize()
         
         #parsing the tokens
-        parser = Parser(my_tokens)
+        parser = Parser(tokens)
         parse_tree = parser.parse()
 
         #interpreting the parse tree

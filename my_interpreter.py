@@ -30,7 +30,10 @@ class Interpreter:
             output = left % right
         
         #return the output in the ProLang's data types and not python's
-        return Integer(output) if(left_type == 'INT' and right_type == 'INT') else Float(output)
+        print("type of output is ", type(output))
+        return Integer(output) if(type(output) == 'int') else Float(output)
+        # return output
+
 
     def interpret(self, tree = None):
         if tree == None:
