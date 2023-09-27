@@ -17,7 +17,6 @@ class Interpreter:
         left = getattr(self, f"read_{left_type}")(left.value)
         right = getattr(self, f"read_{right_type}")(right.value)
 
-
         if operator.value == '+':
             output = left + right
         elif operator.value == '-':
@@ -29,10 +28,9 @@ class Interpreter:
         elif operator.value == '%':
             output = left % right
         
-        #return the output in the ProLang's data types and not python's
-        print("type of output is ", type(output))
-        return Integer(output) if(type(output) == 'int') else Float(output)
-        # return output
+        #return the output in the ProLang's data types and not python's       
+        return Integer(output) if(type(output) == int) else Float(output)
+
 
 
     def interpret(self, tree = None):

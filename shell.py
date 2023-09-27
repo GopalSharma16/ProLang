@@ -11,13 +11,15 @@ while True:
         #tokenizing the input
         tokenizer = Lexer(text)
         tokens = tokenizer.tokenize()
+        print(tokens)
         
         #parsing the tokens
         parser = Parser(tokens)
         parse_tree = parser.parse()
+        print(parse_tree)
 
-        #interpreting the parse tree
-        interpreter = Interpreter(parse_tree)
-        result = interpreter.interpret()
+        # #interpreting the parse tree
+        # interpreter = Interpreter(parse_tree)
+        # result = interpreter.interpret()
 
-        print(result)
+        # print(result)
